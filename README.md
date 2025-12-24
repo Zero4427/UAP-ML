@@ -178,7 +178,7 @@ Untuk menjalankan sistem prediksi, buka terminal dan jalankan file app.py dengan
 streamlit run app.py
 ```
 
-> Jika anda ingin langsung melihat penggunaan Sistem Prediksi dari project ini, Lihat bagian Link Live Demo
+> Jika anda ingin lansung melihat penggunaan Sistem Prediksi dari project ini, Lihat bagian [Link Live Demo](#link-live-demo)
 
 ### Pelatihan Model
 
@@ -242,13 +242,15 @@ Aplikasi Streamlit untuk prediksi kualitas udara dengan input sensor/lingkungan.
 
 ### Tampilan
 
-- **Sidebar**: Pilih mode (single/multi/time-series), info dashboard.
+- **Sidebar**: Pilih mode prediksi (single/multi/time-series), info dashboard dan target pengguna.
 - **Main**: Input data, prediksi AQI, visual (gauge chart, radar, line chart untuk 24 jam), rekomendasi kesehatan.
 - UI: CSS custom dengan gradient biru, Plotly charts.
 
 ### Link Live Demo
 
-[Demo Dashboard Kualitas Udara](https://your-streamlit-app-link.streamlit.app/)  (Optional: Deploy ke streamlit.io)
+Coba aplikasi prediksi kesuksesan akademik mahasiswa secara langsung dengan mengunjungi tautan di bawah ini:
+
+[🔗 **Demo Aplikasi Sederhana Streamlit**](https://tes-uap-dashboard.streamlit.app/)
 
 ---
 
