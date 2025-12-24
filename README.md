@@ -9,41 +9,14 @@
   </p>
 </div>
 
-# <h1 align="center">TABLE OF CONTENT</h1>
-
-
-1. [Deskripsi Project](#-deskripsi-project-)
-      - [Latar Belakang](#latar-belakang)
-      - [Tujuan Pengembangan](#tujuan-pengembangan)
-2. [Sumber Dataset](#-sumber-dataset-)
-3. [Preprocessing dan Pemodelan](#-preprocessing-dan-pemodelan-)
-      - [Pemilihan Kolom/Atribut](#pemilihan-kolomatribut)
-      - [Preprocessing Data](#preprocessing-data)
-      - [Pemodelan](#pemodelan)
-4. [Langkah Instalasi](#-langkah-instalasi-)
-      - [Software Utama](#software-utama)
-      - [Dependensi](#dependensi)
-      - [Menjalankan Sistem Prediksi](#menjalankan-sistem-prediksi)
-      - [Pelatihan Model](#pelatihan-model)
-5. [Hasil dan Analisis](#-hasil-dan-analisis-)
-      - [Evaluasi Model](#evaluasi-model )
-6. [Sistem Sederhana Streamlit](#-sistem-sederhana-streamlit-)
-      - [Tampilan](#tampilan)
-      - [Link Live Demo](#link-live-demo)
-7. [Biodata](#-biodata-)  
-
 ---
-
-
-<h1 align="center">📚 Deskripsi Project 📚</h1>
-
-# Deskripsi Project
+# 📚 Deskripsi Project 📚
 
 Proyek ini bertujuan untuk mengembangkan **sistem prediksi kualitas udara** berdasarkan **data polutan dan faktor lingkungan** menggunakan model pembelajaran mesin. **Sistem ini memprediksi konsentrasi polutan (seperti CO, NO₂, C₆H₆) dan mengklasifikasikannya ke dalam kategori AQI (Air Quality Index) seperti Good, Moderate, dan Unhealthy**. Prediksi mencakup mode single polutan, multi polutan, serta time-series 24 jam ke depan Hubungan antar variabel lingkungan seperti suhu, kelembapan, dan konsentrasi polutan juga dianalisis untuk memahami faktor-faktor yang memengaruhi kualitas udara. Dengan pendekatan ini, sistem tidak hanya berfungsi sebagai alat prediksi, tetapi juga sebagai sarana eksplorasi data yang komprehensif untuk mendukung pengambilan keputusan, perencanaan kebijakan lingkungan, dan peningkatan kesadaran masyarakat terhadap isu polusi udara
 
 ---
 
-### Latar Belakang
+## Latar Belakang
 
 Kualitas udara dipengaruhi oleh berbagai faktor, termasuk:
 - Konsentrasi polutan seperti CO(GT), NO2(GT), C6H6(GT).
