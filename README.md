@@ -36,11 +36,11 @@
 
 
 <h1 align="center">📚 Deskripsi Project 📚</h1>
----
 
 # Deskripsi Project
 
-Proyek ini bertujuan untuk **mengembangkan sistem prediksi kualitas udara** berdasarkan data polutan dan faktor lingkungan menggunakan model pembelajaran mesin. Sistem ini memprediksi konsentrasi polutan (seperti CO, NO2, C6H6) dan mengklasifikasikannya ke dalam kategori AQI (Air Quality Index) seperti Good, Moderate, Unhealthy. Prediksi mencakup mode single polutan, multi polutan, dan time-series 24 jam ke depan.
+Proyek ini bertujuan untuk mengembangkan **sistem prediksi kualitas udara** berdasarkan **data polutan dan faktor lingkungan** menggunakan model pembelajaran mesin. **Sistem ini memprediksi konsentrasi polutan (seperti CO, NO₂, C₆H₆) dan mengklasifikasikannya ke dalam kategori AQI (Air Quality Index) seperti Good, Moderate, dan Unhealthy**. Prediksi mencakup mode single polutan, multi polutan, serta time-series 24 jam ke depan Hubungan antar variabel lingkungan seperti suhu, kelembapan, dan konsentrasi polutan juga dianalisis untuk memahami faktor-faktor yang memengaruhi kualitas udara. Dengan pendekatan ini, sistem tidak hanya berfungsi sebagai alat prediksi, tetapi juga sebagai sarana eksplorasi data yang komprehensif untuk mendukung pengambilan keputusan, perencanaan kebijakan lingkungan, dan peningkatan kesadaran masyarakat terhadap isu polusi udara
+
 ---
 
 ### Latar Belakang
@@ -165,28 +165,24 @@ pip install -r requirements.txt
 Anda juga dapat menginstal dependensi satu per satu menggunakan perintah seperti berikut:
 
 ```
-pip install torch==2.0.0
+pip install torch==2.0.0 matplotlib>=3.6.1 numpy>=1.24.0 pandas>=1.5.0 plotly>=5.18.0 requests>=2.28.0 scikit-learn>=1.4.0 streamlit>=1.21.0
 ```
-
-> Lakukan hal yang sama untuk semua dependensi yang tersedia di requirements.txt
 
 ### Menjalankan Sistem Prediksi
 
 Untuk menjalankan sistem prediksi, buka terminal dan jalankan file app.py dengan perintah berikut:
 
 ```
-streamlit run app.py
+streamlit run dashboard.py
 ```
 
 > Jika anda ingin lansung melihat penggunaan Sistem Prediksi dari project ini, Lihat bagian [Link Live Demo](#link-live-demo)
 
 ### Pelatihan Model
 
-Model yang telah dilatih tersedia di direktori Model. Namun dalam hal ini, untuk beberapa model tidak dapat diupload ke direktori github karena keterbatasan ukuran file. Berikut disediakan model dalam bentuk link Google Drive jika diperlukan.
+Model yang telah dilatih tersedia di direktori Model.
 
-> Google Drive - Model Save Pelatihan (klik)
-
-Jika Anda ingin melatih model dari awal, jalankan file training_models.ipynb yang tersedia di direktori ini menggunakan Google Colab atau Jupyter.
+Jika Anda ingin melatih model dari awal, jalankan file UAP_Machine_Learning.ipynb yang tersedia di direktori ini menggunakan Google Colab atau Jupyter.
 
 ---
 
@@ -194,7 +190,58 @@ Jika Anda ingin melatih model dari awal, jalankan file training_models.ipynb yan
 
 ### Evaluasi Model
 
-Model dievaluasi menggunakan beberapa metrik, termasuk MAE/RMSE (regresi) dan classification report/CM/accuracy via AQI classes (Good, Moderate, Unhealthy). Grafik: Loss train/val (PNG: MLP_Single_plot.png, dll.).
+Model dievaluasi menggunakan beberapa metrik, termasuk MAE/RMSE (regresi) dan classification report/CM/accuracy via AQI classes (Good, Moderate, Unhealthy). 
+
+#### 🔹 MLP Single (Base Model)
+**Loss & Training Validation**
+![MLP Single Loss](https://raw.githubusercontent.com/Zero4427/UAP-ML/main/Assets/MLP_Single_loss_plot.png)
+
+**Accuracy Training & Validation**
+![MLP Accuracy](https://raw.githubusercontent.com/Zero4427/UAP-ML/main/Assets/MLP_Single_accuracy_plot.png)
+
+**Confusion Matrix (AQI Classes)**
+![MLP Confusion Matrix](https://raw.githubusercontent.com/Zero4427/UAP-ML/main/Assets/confusion_matrix_MLP_Single.png)
+
+#### 🔹 MLP Multiple (Base Model)
+**Loss & Training Validation**
+![MLP Single Loss](https://raw.githubusercontent.com/Zero4427/UAP-ML/main/Assets/MLP_Multi_loss_plot.png)
+
+**Accuracy Training & Validation**
+![MLP Accuracy](https://raw.githubusercontent.com/Zero4427/UAP-ML/main/Assets/MLP_Multi_accuracy_plot.png)
+
+**Confusion Matrix (AQI Classes)**
+![MLP Confusion Matrix](https://raw.githubusercontent.com/Zero4427/UAP-ML/main/Assets/confusion_matrix_MLP_Multi.png)
+
+#### 🔹 Autoencoder + Regressor (Pretrained 1)
+**Loss & Training Validation**
+![AE Regressor Loss](https://raw.githubusercontent.com/Zero4427/UAP-ML/main/Assets/AE_Reg_loss_plot.png)
+
+**Accuracy Training & Validation**
+![MLP Accuracy](https://raw.githubusercontent.com/Zero4427/UAP-ML/main/Assets/AE_Reg_accuracy_plot.png)
+
+**Confusion Matrix (AQI Classes)**
+![MLP Confusion Matrix](https://raw.githubusercontent.com/Zero4427/UAP-ML/main/Assets/confusion_matrix_AE_Reg.png)
+
+#### 🔹 SimpleFTTransformer (Pretrained 2)
+**Loss & Training Validation**
+![FTTransformer Loss](https://raw.githubusercontent.com/Zero4427/UAP-ML/main/Assets/SimpleFTTransformer_loss_plot.png)
+
+**Accuracy Training & Validation**
+![MLP Accuracy](https://raw.githubusercontent.com/Zero4427/UAP-ML/main/Assets/SimpleFTTransformer_accuracy_plot.png)
+
+**Confusion Matrix (AQI Classes)**
+![MLP Confusion Matrix](https://raw.githubusercontent.com/Zero4427/UAP-ML/main/Assets/confusion_matrix_SimpleFTTransformer.png)
+
+#### 🔹 LSTM Time-Series (24 Jam)
+**Loss & Training Validation**
+![LSTM Loss](https://raw.githubusercontent.com/Zero4427/UAP-ML/main/Assets/LSTM_TimeSeries_loss_plot.png)
+
+**Accuracy Training & Validation**
+![MLP Accuracy](https://raw.githubusercontent.com/Zero4427/UAP-ML/main/Assets/LSTM_TimeSeries_accuracy_plot.png)
+
+**Confusion Matrix (AQI Classes)**
+![MLP Confusion Matrix](https://raw.githubusercontent.com/Zero4427/UAP-ML/main/Assets/confusion_matrix_LSTM_TimeSeries.png)
+
 
 #### Classification Report
 
@@ -228,11 +275,8 @@ Unhealthy for Sensitive Groups       1.00      0.25      0.40         4
                      macro avg       0.95      0.64      0.72      1872
                   weighted avg       0.97      0.97      0.97      1872
 
-Confusion Matrix: [[1733 9 0] [40 86 0] [0 3 1]]
 
 Analisis: Pretrained model lebih baik dalam generalisasi (RMSE lebih rendah), base MLP overfit pada data train. LSTM untuk time-series: Accuracy 0.97 pada 24 jam pred (max AQI 116.67, rata 24.08).
-
-Grafik Loss: ![MLP_Single Loss](images/MLP_Single_plot.png)
 
 ---
 
